@@ -66,6 +66,7 @@ namespace scopy
             if (help)
             {
                 WriteHelp();
+                return ExitCode;
             }
             else
             {
@@ -145,7 +146,7 @@ namespace scopy
 
         static void WriteHelp()
         {
-            Console.WriteLine("Copied files and directories");
+            Console.WriteLine("Copies files and directory trees.");
             Console.WriteLine();
             Console.WriteLine("SCOPY source[+source2][+source3]... [destination] [/S] [/Y]");
             Console.WriteLine();
