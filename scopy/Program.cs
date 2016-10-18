@@ -128,13 +128,13 @@ namespace scopy
                                     if (paths.Length > 1 && j == paths.Length - 2)
                                         Directory.CreateDirectory(FilePath);
                                 }
-                                Console.WriteLine(file);
+                                Console.WriteLine(file.Replace(currentDirectoryPath, "").TrimStart('\\'));
                                 File.Copy(file, FilePath, withRewrite);
                                 filesCopiedCount++;
                             }
                             catch (IOException e)
                             {
-                                // Console.WriteLine("File {0} already exist", file.Name);
+                                ExitCode = 1;
                             }
                         }
                     }
