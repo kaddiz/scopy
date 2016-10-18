@@ -3,3 +3,4 @@ C:\Users\tka49\Desktop\scopy\scopy\bin\Debug\scopy.exe
 C:\Users\tka49\Desktop\scopy\scopy\bin\Debug\scopy.pdb
 C:\Users\tka49\Desktop\scopy\scopy\obj\Debug\scopy.exe
 C:\Users\tka49\Desktop\scopy\scopy\obj\Debug\scopy.pdb
+C:\Users\tka49\Desktop\scopy\scopy\obj\Debug\scopy.csprojResolveAssemblyReference.cache

@@ -1,7 +1,7 @@
 echo off
 cls
 
-scopy "d:\dir y"
+scopy "d:\dir y" "dir y"
 
 if %errorLevel% == 0 (
 	echo Operation Successful

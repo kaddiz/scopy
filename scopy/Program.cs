@@ -16,7 +16,9 @@ namespace scopy
         private static bool withRewrite = false;
 
         private static string currentDirectoryPath = Directory.GetCurrentDirectory();
-        private static string [] sourcePath;
+        private static string[] sourcePath;
+        private static string[] destinationPath;
+        private static char[] fileOrDirectoryParams;
 
         static int Main(string[] args)
         {
@@ -50,6 +52,24 @@ namespace scopy
                         if (index == 0) help = true;
                         if (index == 1 || index == 2) withSubdirectories = true;
                         if (index == 3 || index == 4) withRewrite = true;
+                    }
+                    if (!isKey && i == 1)
+                    {
+                        destinationPath = args[i].Split('+');
+                        fileOrDirectoryParams = new char[destinationPath.Length];
+                        for (int j = 0; j < fileOrDirectoryParams.Length; j++)
+                        {
+                            ConsoleKeyInfo keyCode;
+                            do
+                            {
+                                Console.WriteLine("What is {0}:", destinationPath[j]);
+                                Console.WriteLine("file or directory name");
+                                Console.Write("(F = File, D = Directory)? ");
+                                keyCode = Console.ReadKey(true);
+                                Console.WriteLine();
+                            } while (keyCode.KeyChar != 'F' && keyCode.KeyChar != 'D');
+                            fileOrDirectoryParams[j] = keyCode.KeyChar;
+                        }
                     }
                 }
             }
