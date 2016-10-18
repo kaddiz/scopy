@@ -1,2 +1,2 @@
 # scopy
-Programm that copies files and directory trees.
+Program that copies files and directory trees.
