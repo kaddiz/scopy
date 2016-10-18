@@ -65,7 +65,7 @@ namespace scopy
             }
             if (help)
             {
-                Console.WriteLine("help");
+                WriteHelp();
             }
             else
             {
@@ -141,6 +141,18 @@ namespace scopy
             }
             Console.WriteLine("File(s) copied: {0}.", filesCopiedCount);
             return ExitCode;
+        }
+
+        static void WriteHelp()
+        {
+            Console.WriteLine("Copied files and directories");
+            Console.WriteLine();
+            Console.WriteLine("SCOPY source[+source2][+source3]... [destination] [/S] [/Y]");
+            Console.WriteLine();
+            Console.WriteLine("  source        Copied files.");
+            Console.WriteLine("  destination   Destination directory.");
+            Console.WriteLine("  /S            Copied with subdirectories.");
+            Console.WriteLine("  /Y            Confirmation to overwrite an existing destination file.");
         }
     }
 }
