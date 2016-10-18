@@ -154,6 +154,7 @@ namespace scopy
             Console.WriteLine("  destination   Destination directory.");
             Console.WriteLine("  /S            Copied with subdirectories.");
             Console.WriteLine("  /Y            Confirmation to overwrite an existing destination file.");
+            Console.WriteLine();
         }
     }
 }
