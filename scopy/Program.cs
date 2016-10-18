@@ -8,8 +8,14 @@ namespace scopy
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Invalid number of parameters");
+                return 4;
+            }
+            return 0;
         }
     }
 }
