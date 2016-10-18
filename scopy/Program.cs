@@ -15,6 +15,9 @@ namespace scopy
         private static bool help = false;
         private static bool withRewrite = false;
 
+        private static string currentDirectoryPath = Directory.GetCurrentDirectory();
+        private static string [] sourcePath;
+
         static int Main(string[] args)
         {
             if (args.Length == 0)
@@ -26,7 +29,16 @@ namespace scopy
             {
                 if (i == 0)
                 {
-                    if (!Directory.Exists(args[i]) && !File.Exists(args[i])) return 1;
+                    if (args[i] == "/?")
+                    {
+                        help = true;
+                        break;
+                    }
+                    sourcePath = args[i].Split('+');
+                    foreach (var item in sourcePath)
+                    {
+                        if (!Directory.Exists(item) && !File.Exists(item)) return 1;
+                    }
                 }
                 else
                 {
@@ -34,13 +46,20 @@ namespace scopy
                     if (args[i][0] == '/') isKey = true;
                     if (isKey)
                     {
-                        int index = -1;
-                        index = Array.IndexOf(keys, args[i]);
+                        int index = Array.IndexOf(keys, args[i]);
                         if (index == 0) help = true;
                         if (index == 1 || index == 2) withSubdirectories = true;
                         if (index == 3 || index == 4) withRewrite = true;
                     }
                 }
+            }
+            if (help)
+            {
+                Console.WriteLine("help");
+            }
+            else
+            {
+
             }
             return 0;
         }
